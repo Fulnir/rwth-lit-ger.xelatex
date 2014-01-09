@@ -1,9 +1,12 @@
 # Eine Vorlage für ein XeLaTeX Dokument
 ---
 
+*ACHTUNG* Dies ist nur ein Entwurf.
+
 Vorgesehen für literaturwissenschaftliche Arbeiten an der RWTH Aachen. 
 
 Diese Vorlage orientiert sich an den Vorgaben vom
+
 "INSTITUT FÜR GERMANISTISCHE UND ALLGEMEINE LITERATURWISSENSCHAFT" RWTH Aachen
 
 
