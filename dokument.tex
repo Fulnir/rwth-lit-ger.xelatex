@@ -1,0 +1,85 @@
+%------------------Preambel----------------
+% !BIB TS-program = biber
+%
+% das Papierformat zuerst, Schriftgröße 12 Punkte, Dokumentstil Artikel, Zweiseitig , Koma - Script
+\documentclass[a4paper,12pt,twoside]{scrreprt}
+% deutsche Silbentrennung
+\usepackage[ngerman]{babel}
+\selectlanguage{ngerman}
+\usepackage[babel, german=quotes]{csquotes} 
+% Deutsche Umlaute
+\usepackage[utf8]{inputenc}
+%
+%\usepackage{helvet}
+%  Now, where the change of font is desired, add the following command:
+%\fontfamily{phv}\selectfont
+% I have changed the font type from Times Roman to Helvetica of the title of an article.
+%\title{\fontfamily{phv}\selectfont{\huge{\bfseries{Parallelization of DC-Analyzer}}}}
+% wir wollen auf jeder Seite eine Überschrift
+\pagestyle{headings}
+% Für den Index \index{Schlüsselwort}
+\usepackage{makeidx}
+\makeindex
+%\usepackage[backend=biber,style=mla]{biblatex}
+%     BibLaTeX    http://sunsite.informatik.rwth-aachen.de/ftp/pub/mirror/ctan/macros/latex/contrib/biblatex/doc/biblatex.pdf
+%\usepackage{natbib}
+\usepackage[
+backend=biber,
+style=uni-wtal-ger,        % Zitierstil numeric, uni-wtal-ger http://biblatex.dominik-wassenhoven.de/biblatex-dw.shtml
+isbn=false,                % ISBN nicht anzeigen, gleiches geht mit nahezu allen anderen Feldern
+pagetracker=true,          % ebd. bei wiederholten Angaben (false=ausgeschaltet, page=Seite, spread=Doppelseite, true=automatisch)
+maxbibnames=50,            % maximale Namen, die im Literaturverzeichnis angezeigt werden (ich wollte alle)
+maxcitenames=3,            % maximale Namen, die im Text angezeigt werden, ab 4 wird u.a. nach den ersten Autor angezeigt
+autocite=inline,           % regelt Aussehen für \autocite (inline=\parancite)
+block=space,               % kleiner horizontaler Platz zwischen den Feldern
+backref=true,              % Seiten anzeigen, auf denen die Referenz vorkommt
+backrefstyle=three+,       % fasst Seiten zusammen, z.B. S. 2f, 6ff, 7-10
+date=short,                % Datumsformat
+]{biblatex}
+%\setlength{\bibitemsep}{1em}     % Abstand zwischen den Literaturangaben
+%\setlength{\bibhang}{2em}        % Einzug nach jeweils erster Zeile
+
+% Festlegung Art der Zitierung - Havardmethode: Abkuerzung Autor + Jahr
+%\bibliographystyle{myalpha} % alphadin
+\bibliography{bachelor}  % Bibtex-Datei wird schon in der Preambel eingebunden
+
+
+%\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{epstopdf}
+%\usepackage{tipa}		%LaTeX für Linguisten http://homepage.ruhr-uni-bochum.de/alexander.linke-2/linguistik/LaTeX/downloads/latex_fuer_linguisten.pdf
+
+% —– Start: Angaben zur Formatierung von Überschriften —– % 
+\usepackage{titletoc} 
+\titlecontents{chapter}[1.5em]{\addvspace{1pc}\bfseries}{\contentslabel{1.5em}} 
+{\hspace*{-1.5em}}{\titlerule*[0.3pc]{.}\contentspage} 
+\titlecontents{section}[3.7em]{}{\contentslabel{2.2em}}{} 
+{\titlerule*[0.3pc]{.}\contentspage} 
+\titlecontents{subsection}[6.7em]{}{\contentslabel{2.95em}}{} 
+{\titlerule*[0.3pc]{.}\contentspage} 
+\setcounter{tocdepth}{3} 
+\setcounter{secnumdepth}{3} 
+% —– Ende: Angaben zur Formatierung von Überschriften —– % 
+
+%------------------Dokument----------------
+\begin{document}
+%---------------------
+% Eigene Mekros
+\input{macros}
+%---------------------
+% Die Titelseite
+\rwthtitelseite{Thesistyp}{Titel}{Untertitel}{Autorname}{Ort}
+%---------------------
+% Das Inhaltsverzeichnis
+\tableofcontents
+%---------------------
+% Der Inhalt
+\input{inhalt}
+%---------------------
+% Ausgabe Bibliography
+\printbibliography
+%---------------------
+% Der Index
+\printindex
+\end{document}  
