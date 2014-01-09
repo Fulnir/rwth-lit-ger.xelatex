@@ -1,24 +1,47 @@
 %------------------------Titelseite--------------------------
-%
-\newcommand {\rwthtitelseite} [5] {
+% Institut für Germanistische und Allgemeine Literaturwissenschaft der RWTH Aachen
+\newcommand {\rwthtitelseite} [7] {
 \begin{titlepage}
-	\begin{center}
-\begin{figure}[h]
+%
+\noindent 			% Keine Einrückung im folgenden Absatz.
+Institut für Germanistische und\\
+Allgemeine Literaturwissenschaft\\
+der RWTH Aachen
+%
 \begin{center}
-%\includegraphics[width=100mm]{./images/logo}
-\end{center}
-\end{figure}
-\vfill
-{\LARGE #1} \\ % Thesistyp
-\vfill
-{\LARGE #2} \\ % Titel
-#3   % Untertitel-Beschreibung
-\vfill
-{\large  #4 } \\ % Autorname
-#5 den \today % Ort
-
+%
 \vfill
 \vfill
+\vfill
+%
+{\LARGE #2} \\		% Titel
+#3 					% Untertitel - Beschreibung
+\vfill
+vorgelegt als\\
+{\large #1} \\		% Thesistyp
+\vfill
+\vfill
+%
+%
+{\large  #4 } \\ 	% Autorname
+#6 den \today 		% Ort
+%
+\vfill
+\vfill
+%
+\hfill
+\noindent 			% Keine Einrückung im folgenden Absatz.
+% \parbox [t][Höhe][b]{Breite} {Text}
+\parbox [t][4cm][b]{60mm} 
+{#4, #5\\
+#7\\
+#6 den \today } 	% Ort
+%
+%\hrulefill 		% Eine horizontale Linie.
+%
 \end{center}
 \end{titlepage}
 }
+%
+%
+% Mehr Makros.
